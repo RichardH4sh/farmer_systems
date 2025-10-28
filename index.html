@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Farmer Data Management (AJAX)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🌾 Farmer Data Management System (AJAX)</h1>
+  
+  <div id="dashboard" class="dashboard">
+    <div class="card">
+      <h3>Total Farmers</h3>
+      <p id="statFarmers">0</p>
+    </div>
+    <div class="card">
+      <h3>Total Produce</h3>
+      <p id="statProduce">0</p>
+    </div>
+    <div class="card">
+      <h3>Total Quantity (kg)</h3>
+      <p id="statQuantity">0</p>
+    </div>
+    <div class="card">
+      <h3>Total Stock Value ($)</h3>
+      <p id="statValue">0.00</p>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <h2>Add / Edit Farmer</h2>
+    <input id="farmer_id" type="hidden">
+    <input id="farmer_name" placeholder="Farmer Name">
+    <input id="farmer_location" placeholder="Location">
+    <input id="farmer_phone" placeholder="Phone">
+    <button onclick="saveFarmer()">Save Farmer</button>
+    <button onclick="clearFarmer()">Clear</button>
+  </div>
+
+  <div id="farmerList" class="container"></div>
+
+  <hr>
+
+  <div class="container">
+    <h2>Add / Edit Produce</h2>
+    <input id="produce_id" type="hidden">
+    <input id="produce_farmer_id" placeholder="Farmer ID">
+    <input id="produce_name" placeholder="Produce Name">
+    <input id="produce_quantity" placeholder="Quantity (kg)">
+    <input id="produce_price" placeholder="Price per Kg">
+    <button onclick="saveProduce()">Save Produce</button>
+    <button onclick="clearProduce()">Clear</button>
+  </div>
+
+  <div class="container">
+    <h2>Search Produce</h2>
+    <input id="search_name" placeholder="Search produce name..." onkeyup="searchProduce()">
+    <div id="produceList"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
